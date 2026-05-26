@@ -316,18 +316,21 @@ html, body {
 .gap-rows {
   display: flex;
   flex-direction: column;
-  gap: 4mm;
+  gap: 3mm;
 }
 .gap-row-group {
   display: grid;
-  grid-template-columns: 70mm 1fr;
-  grid-template-rows: auto auto;
+  grid-template-columns: 95mm 1fr;
   column-gap: 4mm;
-  row-gap: 1.5mm;
   align-items: center;
+  padding: 2mm 0;
+  border-top: 0.4mm solid var(--line);
+}
+.gap-row-group:first-child { border-top: none; }
+.gap-row-group--gap {
+  background: linear-gradient(90deg, rgba(244,125,32,0.07) 0%, transparent 100%);
 }
 .gap-role {
-  grid-row: span 2;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 18pt;
@@ -342,17 +345,23 @@ html, body {
   color: var(--muted);
   margin-top: 0.5mm;
 }
+.gap-row-group--gap .gap-role em {
+  color: var(--orange-deep);
+  font-style: normal;
+  font-weight: 700;
+}
 .gap-yr {
   display: grid;
-  grid-template-columns: 10mm 1fr;
+  grid-template-columns: 28mm 1fr;
   align-items: center;
-  gap: 3mm;
+  gap: 4mm;
 }
 .gap-yr-label {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 16pt;
+  font-size: 18pt;
   color: var(--muted);
+  text-align: right;
 }
 .gap-bar {
   display: flex;

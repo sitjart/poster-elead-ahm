@@ -1,7 +1,8 @@
 /* ============================================================
    ELEAD CAMPAIGN poster — A0 portrait (841 × 1189 mm)
-   "Show your work." — All Hands ELIXIR 2026, Lyon.
-   Eye-catcher poster; the dense flyer (poster.html) carries detail.
+   "Not yet." — All Hands ELIXIR 2026, Lyon.
+   Eye-catcher: parity gap as the hero; ELEAD as the response.
+   The dense flyer (poster.html) carries detail.
    ============================================================ */
 
 @page { size: A0 portrait; margin: 0; }
@@ -54,7 +55,7 @@ html, body {
     radial-gradient(60% 80% at 78% 28%, rgba(244,125,32,0.22), transparent 70%),
     linear-gradient(180deg, var(--navy) 0%, var(--navy) 80%, var(--navy-deep) 100%);
   color: #fff;
-  padding: 28mm 28mm 22mm;
+  padding: 28mm 30mm 22mm;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -62,8 +63,8 @@ html, body {
   min-height: 540mm;
   overflow: hidden;
 }
-/* Diagonal orange/navy stripe at the bottom, like a campaign band */
 .hero::after {
+  /* orange/white slab at the bottom of the hero — campaign band */
   content: "";
   position: absolute;
   left: 0;
@@ -95,209 +96,218 @@ html, body {
 .hero-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 380pt;
+  font-size: 460pt;
   line-height: 0.84;
-  letter-spacing: -10pt;
+  letter-spacing: -14pt;
   color: #fff;
-  margin: 18mm 0 14mm;
+  margin: 16mm 0 18mm;
   display: flex;
   flex-direction: column;
 }
-.ht-line {
-  display: block;
-}
+.ht-line { display: block; }
 .ht-line--accent {
   color: var(--orange);
   font-style: italic;
 }
 
+/* Three big stat bullets — the parity gap in numbers */
+.hero-facts {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12mm;
+  display: flex;
+  flex-direction: column;
+  gap: 4mm;
+}
+.hero-facts li {
+  display: grid;
+  grid-template-columns: 110mm 1fr;
+  align-items: baseline;
+  gap: 12mm;
+  padding-bottom: 4mm;
+  border-bottom: 0.5mm solid rgba(255,255,255,.18);
+}
+.hero-facts li:last-child { border-bottom: none; padding-bottom: 0; }
+.fact-n {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 84pt;
+  line-height: 1;
+  color: var(--orange);
+  letter-spacing: -3pt;
+  text-align: right;
+}
+.fact-l {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 32pt;
+  line-height: 1.15;
+  color: #fff;
+}
+
 .hero-sub {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: 50pt;
-  line-height: 1.05;
-  color: rgba(255,255,255,.95);
+  font-size: 36pt;
+  line-height: 1.15;
+  color: rgba(255,255,255,.92);
   margin: 0;
-  max-width: 540mm;
+  max-width: 580mm;
 }
 .hero-sub strong {
   font-weight: 700;
   color: #fff;
-  display: inline-block;
 }
 
-/* Top-right "ON THE RECORD" round stamp — gives the campaign a stamp/seal motif */
-.hero-stamp {
-  position: absolute;
-  top: 36mm;
-  right: 34mm;
-  width: 120mm;
-  height: 120mm;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: rotate(-8deg);
-  pointer-events: none;
-}
-.stamp-ring {
-  position: absolute;
-  inset: 0;
-  border: 1.4mm solid var(--orange);
-  border-radius: 50%;
-  opacity: 0.85;
-}
-.stamp-ring::before, .stamp-ring::after {
-  content: "";
-  position: absolute;
-  inset: 4mm;
-  border: 0.4mm dashed var(--orange);
-  border-radius: 50%;
-  opacity: 0.55;
-}
-.stamp-ring::after {
-  inset: 8mm;
-  border-style: solid;
-  opacity: 0.25;
-}
-.stamp-text {
-  font-family: var(--font-display);
-  font-weight: 700;
-  color: var(--orange);
-  text-align: center;
-  letter-spacing: 2pt;
-  display: flex;
-  flex-direction: column;
-  gap: 1mm;
-  line-height: 1;
-}
-.stamp-text > span {
-  font-size: 19pt;
-  letter-spacing: 4pt;
-}
-.stamp-text .stamp-big {
-  font-size: 36pt;
-  letter-spacing: 2pt;
-  margin: 1mm 0;
-}
-
-/* ============== EVIDENCE BAND (WHITE) ============== */
+/* ============== EVIDENCE BAND (WHITE) — THE FULL CHART ============== */
 .proof {
   flex: 1 1 auto;
-  padding: 22mm 28mm 18mm;
+  padding: 20mm 30mm 16mm;
   display: flex;
   flex-direction: column;
-  gap: 12mm;
+  gap: 10mm;
   background: var(--bg);
 }
 
-.proof-strap {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 38pt;
-  line-height: 1.1;
-  color: var(--navy);
-  margin: 0;
-  letter-spacing: -0.5pt;
-}
-.proof-strap span {
-  display: block;
-  font-weight: 400;
-  font-size: 26pt;
-  color: var(--ink);
-  margin-top: 4mm;
-  line-height: 1.2;
-}
-
-.trajectories {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.proof-head {
   display: flex;
   flex-direction: column;
-  gap: 9mm;
+  gap: 3mm;
 }
-
-.traj {
-  display: grid;
-  grid-template-columns: 80mm 1fr;
-  gap: 14mm;
-  align-items: start;
-  padding: 9mm 0 9mm;
-  border-top: 0.6mm solid var(--line);
-  position: relative;
-}
-.traj:first-child { border-top: 1.2mm solid var(--navy); }
-.traj:last-child { padding-bottom: 0; }
-
-.traj-num {
+.proof-h {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 80pt;
-  line-height: 0.9;
-  color: var(--orange);
-  letter-spacing: -3pt;
-}
-.traj:nth-child(2) .traj-num { color: var(--teal); }
-.traj:nth-child(3) .traj-num { color: var(--navy); }
-.traj:nth-child(4) .traj-num { color: var(--orange-deep); }
-
-.traj-body {
-  display: flex;
-  flex-direction: column;
-  gap: 2mm;
-}
-
-.traj-name {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 50pt;
+  font-size: 64pt;
   line-height: 1.0;
   color: var(--navy);
-  margin: 0 0 3mm;
+  margin: 0;
   letter-spacing: -1.5pt;
 }
-
-.traj-from {
-  font-family: var(--font-body);
-  font-style: italic;
-  font-size: 24pt;
-  line-height: 1.15;
-  color: var(--muted);
-  margin: 0;
-}
-
-.traj-to {
+.proof-strap {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: 28pt;
-  line-height: 1.15;
-  color: var(--ink);
-  margin: 1mm 0 2mm;
-}
-.traj-to strong { color: var(--navy); font-weight: 700; }
-.arrow {
-  display: inline-block;
-  color: var(--orange);
-  font-weight: 700;
-  padding: 0 3mm 0 0;
-}
-
-.traj-extra {
-  font-family: var(--font-body);
-  font-size: 21pt;
-  line-height: 1.25;
+  font-size: 25pt;
+  line-height: 1.2;
   color: var(--ink);
   margin: 0;
+  max-width: 720mm;
 }
-.traj-extra strong { color: var(--navy); font-weight: 700; }
+.proof-strap strong { color: var(--navy); font-weight: 700; }
+
+/* --- Bar rows: each role on one line --- */
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 5mm;
+}
+.bar-row {
+  display: grid;
+  grid-template-columns: 130mm 90mm 1fr 90mm;
+  gap: 8mm;
+  align-items: center;
+  padding: 4mm 0;
+  border-top: 0.4mm solid var(--line);
+}
+.bar-row:first-child { border-top: 1mm solid var(--navy); }
+.bar-row--gap { background: linear-gradient(90deg, rgba(244,125,32,0.06) 0%, transparent 100%); }
+
+.bar-role {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 26pt;
+  line-height: 1.0;
+  color: var(--navy);
+  letter-spacing: -0.5pt;
+}
+.bar-note {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 18pt;
+  line-height: 1.15;
+  color: var(--muted);
+}
+.bar-row--gap .bar-note {
+  color: var(--orange-deep);
+  font-weight: 700;
+  font-style: normal;
+}
+
+.bar {
+  display: flex;
+  height: 18mm;
+  border-radius: 1.5mm;
+  overflow: hidden;
+  background: var(--line);
+  position: relative;
+}
+.bar-w, .bar-m {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22pt;
+  color: #fff;
+  letter-spacing: -0.5pt;
+}
+.bar-w { background: var(--orange); }
+.bar-m { background: var(--navy); }
+.bar-w strong, .bar-m strong { font-weight: 700; color: #fff; }
+
+.bar-pct {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 24pt;
+  color: var(--ink);
+  letter-spacing: -0.5pt;
+  text-align: right;
+}
+.bar-pct strong { color: var(--orange); font-weight: 700; }
+
+/* Legend below the chart */
+.proof-legend {
+  display: flex;
+  gap: 10mm;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 4mm;
+  border-top: 0.3mm dashed var(--line);
+}
+.leg-key {
+  display: inline-flex;
+  align-items: center;
+  gap: 3mm;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 19pt;
+  color: var(--ink);
+}
+.leg-sw {
+  display: inline-block;
+  width: 10mm;
+  height: 6mm;
+  border-radius: 1mm;
+}
+.leg-sw-w { background: var(--orange); }
+.leg-sw-m { background: var(--navy); }
+.leg-note {
+  margin-left: auto;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 18pt;
+  color: var(--muted);
+  max-width: 360mm;
+  line-height: 1.2;
+}
 
 /* ============== CLOSING (NAVY-DEEP) ============== */
 .closer {
   background: var(--navy-deep);
   color: #fff;
-  padding: 22mm 28mm 22mm;
+  padding: 22mm 30mm 22mm;
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 1.4fr 1fr;
   gap: 22mm;
   align-items: center;
   margin-top: auto;
@@ -308,41 +318,43 @@ html, body {
   content: "";
   position: absolute;
   top: 0;
-  left: 28mm;
+  left: 30mm;
   width: 60mm;
   height: 3mm;
   background: var(--orange);
 }
 
-.closer-cta {
+.closer-left { display: flex; flex-direction: column; gap: 4mm; }
+.closer-eyebrow {
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 5mm;
-}
-.cta-eyebrow {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 24pt;
+  font-size: 22pt;
   letter-spacing: 4pt;
   color: var(--orange);
 }
-.cta-big {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 70pt;
-  line-height: 0.95;
-  color: #fff;
-  letter-spacing: -1.5pt;
-}
-.cta-where {
+.closer-h {
+  margin: 0;
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: 25pt;
+  font-size: 52pt;
+  line-height: 1.0;
+  color: rgba(255,255,255,.92);
+  letter-spacing: -1pt;
+}
+.closer-h strong {
+  color: #fff;
+  font-weight: 700;
+}
+.closer-tracks {
+  margin: 4mm 0 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 24pt;
   line-height: 1.2;
   color: rgba(255,255,255,.85);
 }
-.cta-where em {
+.closer-tracks em {
   font-style: italic;
   font-weight: 700;
   color: var(--orange);
@@ -362,8 +374,8 @@ html, body {
   gap: 2mm;
 }
 .closer-qr {
-  width: 92mm;
-  height: 92mm;
+  width: 88mm;
+  height: 88mm;
   background: #fff;
   padding: 3mm;
   border-radius: 2mm;
@@ -385,20 +397,16 @@ html, body {
 .closer-email {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 32pt;
+  font-size: 26pt;
   color: var(--orange);
   margin: 0;
   line-height: 1.0;
   letter-spacing: -0.5pt;
   word-break: break-all;
 }
-.closer-email strong {
-  font-weight: 700;
-  color: #fff;
-}
 .closer-where {
   font-family: var(--font-body);
-  font-size: 20pt;
+  font-size: 19pt;
   color: rgba(255,255,255,.88);
   margin: 0;
   line-height: 1.2;
