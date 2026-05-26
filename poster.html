@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ELEAD delivers. Now what? — All Hands 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900&family=Work+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="poster.css">
+  <script>
+    // Fit the A0 sheet to the viewport HEIGHT on first load.
+    // Runs only ONCE on load — never on resize/zoom — so the user can zoom in to
+    // read the content and the browser scrollbars let them pan around.
+    function fitPosterToViewport() {
+      if (window.matchMedia('print').matches) return;
+      var stage = document.querySelector('.poster-stage');
+      var p     = document.querySelector('.poster');
+      if (!stage || !p) return;
+      p.style.transform = 'none';
+      stage.style.width = '';
+      stage.style.height = '';
+      var w = p.offsetWidth, h = p.offsetHeight;
+      var pad = 32;
+      var s = Math.min((window.innerHeight - pad) / h, 1);
+      p.style.transform = 'scale(' + s + ')';
+      stage.style.width  = (s * w) + 'px';
+      stage.style.height = (s * h) + 'px';
+    }
+    function clearPosterScale() {
+      var stage = document.querySelector('.poster-stage');
+      var p     = document.querySelector('.poster');
+      if (p) p.style.transform = 'none';
+      if (stage) { stage.style.width = ''; stage.style.height = ''; }
+    }
+    window.addEventListener('DOMContentLoaded', fitPosterToViewport);
+    window.addEventListener('beforeprint', clearPosterScale);
+    window.addEventListener('afterprint', fitPosterToViewport);
+  </script>
+</head>
+<body>
+
+<div class="poster-stage">
+<section class="poster">
+
+  <!-- ============ HEADER ============ -->
+  <header class="hdr">
+    <div class="hdr-left">
+      <p class="eyebrow">ELEAD · ELIXIR LEADERSHIP &amp; DIVERSITY MENTORING · 2023–2026</p>
+      <h1 class="hdr-title">ELEAD <span class="t-orange">delivers.</span><br><span class="t-block">Now&nbsp;what?</span></h1>
+      <p class="hdr-tagline">Two cohorts. Four years. A leadership pipeline with named outcomes — and a sustainability question for the ELIXIR community.</p>
+
+      <div class="hdr-stats">
+        <div class="stat"><span class="stat-num">2</span><span class="stat-lbl">cohorts<br><em>pilot + ELEAD 2.0</em></span></div>
+        <div class="stat"><span class="stat-num">33</span><span class="stat-lbl">mentees<br><em>across both cohorts</em></span></div>
+        <div class="stat"><span class="stat-num">19</span><span class="stat-lbl">mentors<br><em>academia + industry</em></span></div>
+        <div class="stat"><span class="stat-num">16</span><span class="stat-lbl">countries<br><em>+ ELIXIR Hub</em></span></div>
+      </div>
+    </div>
+
+    <aside class="hdr-flag" aria-label="The sustainability cliff in one line">
+      <span class="flag-eyebrow">NOW WHAT?</span>
+      <h3 class="flag-h">Funding ends in 2026.</h3>
+      <p class="flag-p">The 2027–2028 Commissioned Services <strong>will not deliver another ELEAD cohort.</strong> ELEAD 3.0 needs a new home — inside ELIXIR, across infrastructures, or in your Node.</p>
+      <ul class="flag-list">
+        <li><strong>In ELIXIR:</strong> proposing inclusion in People CoS 2027–28</li>
+        <li><strong>Across RIs:</strong> EOSC · Pistoia Alliance · Instruct-ERIC · Euro-BioImaging</li>
+        <li><strong>In Nodes:</strong> UK national grant submitted · EMBL-EBI peer-mentoring spin-off live</li>
+      </ul>
+    </aside>
+  </header>
+
+  <!-- ============ WHY ELEAD EXISTS ============ -->
+  <section class="why">
+    <div class="sec-head">
+      <span class="sec-rule"></span>
+      <h2 class="sec-h">Why ELEAD exists</h2>
+      <p class="sec-strap">Across ELIXIR, women fill the coordinator roles. The decision-making seats are still men's.</p>
+    </div>
+
+    <div class="why-grid">
+      <!-- LEFT: leadership gap chart -->
+      <div class="gap-chart">
+        <p class="gap-caption">Share of <strong>women</strong> vs <strong>men</strong> in centrally-established ELIXIR leadership roles, 2022 → 2024.</p>
+
+        <div class="gap-legend">
+          <span class="gap-key"><span class="gap-sw gap-sw-w"></span>women</span>
+          <span class="gap-key"><span class="gap-sw gap-sw-m"></span>men</span>
+          <span class="gap-key gap-key-axis"><span class="gap-axis-mark"></span>50%</span>
+        </div>
+
+        <div class="gap-rows">
+          <!-- Head of Node -->
+          <div class="gap-row-group">
+            <span class="gap-role">Head of Node</span>
+            <div class="gap-yr">
+              <span class="gap-yr-label">2022</span>
+              <div class="gap-bar"><span class="gap-bar-w" style="width:18%"></span><span class="gap-bar-m" style="width:82%"></span></div>
+            </div>
+            <div class="gap-yr">
+              <span class="gap-yr-label">2024</span>
+              <div class="gap-bar"><span class="gap-bar-w" style="width:30%"></span><span class="gap-bar-m" style="width:70%"></span></div>
+            </div>
+          </div>
+
+          <!-- Deputy Head of Node -->
+          <div class="gap-row-group">
+            <span class="gap-role">Deputy Head of Node</span>
+            <div class="gap-yr">
+              <span class="gap-yr-label">2022</span>
+              <div class="gap-bar"><span class="gap-bar-w" style="width:32%"></span><span class="gap-bar-m" style="width:68%"></span></div>
+            </div>
+            <div class="gap-yr">
+              <span class="gap-yr-label">2024</span>
+              <div class="gap-bar"><span class="gap-bar-w" style="width:42%"></span><span class="gap-bar-m" style="width:58%"></span></div>
+            </div>
+          </div>
+
+          <!-- Node Coordinator -->
+          <div class="gap-row-group">
+            <span class="gap-role">Node Coordinator <em>— "glue" role</em></span>
+            <div class="gap-yr">
+              <span class="gap-yr-label">2022</span>
+              <div class="gap-bar"><span class="gap-bar-w" style="width:68%"></span><span class="gap-bar-m" style="width:32%"></span></div>
+            </div>
+            <div class="gap-yr">
+              <span class="gap-yr-label">2024</span>
+              <div class="gap-bar"><span class="gap-bar-w" style="width:64%"></span><span class="gap-bar-m" style="width:36%"></span></div>
+            </div>
+          </div>
+
+          <!-- Technical Coordinator -->
+          <div class="gap-row-group">
+            <span class="gap-role">Technical Coordinator</span>
+            <div class="gap-yr">
+              <span class="gap-yr-label">2022</span>
+              <div class="gap-bar"><span class="gap-bar-w" style="width:12%"></span><span class="gap-bar-m" style="width:88%"></span></div>
+            </div>
+            <div class="gap-yr">
+              <span class="gap-yr-label">2024</span>
+              <div class="gap-bar"><span class="gap-bar-w" style="width:18%"></span><span class="gap-bar-m" style="width:82%"></span></div>
+            </div>
+          </div>
+
+          <!-- Training Coordinator -->
+          <div class="gap-row-group">
+            <span class="gap-role">Training Coordinator</span>
+            <div class="gap-yr">
+              <span class="gap-yr-label">2022</span>
+              <div class="gap-bar gap-bar-nodata"><span class="gap-nodata">no data</span></div>
+            </div>
+            <div class="gap-yr">
+              <span class="gap-yr-label">2024</span>
+              <div class="gap-bar"><span class="gap-bar-w" style="width:52%"></span><span class="gap-bar-m" style="width:48%"></span></div>
+            </div>
+          </div>
+        </div>
+
+        <p class="gap-foot"><em>Some posts have dual leadership; others remain unfilled. Snapshot data, ELIXIR Hub.</em></p>
+      </div>
+
+      <!-- RIGHT: claim block -->
+      <div class="why-claim">
+        <span class="claim-eyebrow">THE PATTERN</span>
+        <p class="claim-big">Women hold the <strong>coordination &amp; "glue" roles</strong>. Men hold the seats with <strong>budgets, strategy and sponsorship</strong>.</p>
+        <p class="claim-small">ELEAD targets the exact transition point — a structured mentoring, peer-learning and curated training pathway, not a generic leadership course.</p>
+        <div class="claim-pillars">
+          <div class="pillar"><span class="pillar-n">1</span><span class="pillar-h">Personal mentoring</span><span class="pillar-p">1:1 with senior leaders, academia &amp; industry</span></div>
+          <div class="pillar"><span class="pillar-n">2</span><span class="pillar-h">Peer mentoring</span><span class="pillar-p">Small confidential groups — most-cited element</span></div>
+          <div class="pillar"><span class="pillar-n">3</span><span class="pillar-h">Professional training</span><span class="pillar-p">External experts; some sessions open to all ELIXIR</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT WE DELIVERED — IMPACT BY NAME ============ -->
+  <section class="impact">
+    <div class="sec-head">
+      <span class="sec-rule"></span>
+      <h2 class="sec-h">Impact, by name</h2>
+      <p class="sec-strap">Four pilot mentees, four trajectories. No anonymous "participants reported feeling more confident" — these are roles, grants and posts.</p>
+    </div>
+
+    <div class="cases">
+
+      <!-- Mallory Freeberg -->
+      <article class="case">
+        <div class="case-head">
+          <div class="case-photo case-photo--mf"><span class="ph-init">MF</span></div>
+          <div class="case-id">
+            <span class="case-tag">PROMOTED · GA4GH CO-LEAD</span>
+            <h3 class="case-name">Mallory Freeberg</h3>
+            <p class="case-role">EGA Coordinator <span class="case-arrow">→</span> <strong>Human Genomics Team Lead</strong>, EMBL-EBI</p>
+          </div>
+        </div>
+        <ul class="case-points">
+          <li><strong>1 service → 5 services.</strong> 12 → 30 staff. First time named PI on grants.</li>
+          <li>Co-leads the <strong>GA4GH Implementation Forum</strong> — international visibility.</li>
+          <li>Launched a <strong>peer-mentoring group at EMBL-EBI</strong> for new Team Leads (12+). ELEAD model, replicated locally.</li>
+        </ul>
+        <p class="case-quote">"ELEAD is an investment in community leadership. It seeds networks of mentors, collaborators and role models whose impact extends far beyond the cohorts."</p>
+        <div class="case-scores">
+          <span class="score-lbl">Evidence of impact</span>
+          <span class="score-cell"><span class="score-dot score-3"></span><span class="score-dot score-3"></span><span class="score-dot score-3"></span> Human capital</span>
+          <span class="score-cell"><span class="score-dot score-3"></span><span class="score-dot score-3"></span><span class="score-dot score-3"></span> Relationship capital</span>
+          <span class="score-cell"><span class="score-dot score-3"></span><span class="score-dot score-3"></span><span class="score-dot score-3"></span> Legacy / uptake</span>
+        </div>
+      </article>
+
+      <!-- Maria Doyle -->
+      <article class="case">
+        <div class="case-head">
+          <div class="case-photo case-photo--md"><span class="ph-init">MD</span></div>
+          <div class="case-id">
+            <span class="case-tag">PROMOTED · €730K WON</span>
+            <h3 class="case-name">Maria Doyle</h3>
+            <p class="case-role">Bioconductor Community Manager <span class="case-arrow">→</span> <strong>Programme Manager, Bioconductor Training &amp; Engagement</strong>, Univ. of Limerick</p>
+          </div>
+        </div>
+        <ul class="case-points">
+          <li>Co-wrote and <strong>won two international grants totalling €730k</strong> during the programme.</li>
+          <li>Leadership style shift: <em>task-focused → coaching &amp; empowering</em>.</li>
+          <li>Intends to embed peer-mentoring within Bioconductor and ELIXIR Ireland.</li>
+        </ul>
+        <p class="case-quote">"ELEAD reminded me that leadership is about enabling others, not just ticking off tasks."</p>
+        <div class="case-scores">
+          <span class="score-lbl">Evidence of impact</span>
+          <span class="score-cell"><span class="score-dot score-3"></span><span class="score-dot score-3"></span><span class="score-dot score-3"></span> Human capital</span>
+          <span class="score-cell"><span class="score-dot score-2"></span><span class="score-dot score-2"></span><span class="score-dot score-0"></span> Relationship capital</span>
+          <span class="score-cell"><span class="score-dot score-2"></span><span class="score-dot score-2"></span><span class="score-dot score-0"></span> Legacy / uptake</span>
+        </div>
+      </article>
+
+      <!-- Laura Portell Silva -->
+      <article class="case">
+        <div class="case-head">
+          <div class="case-photo case-photo--lp"><span class="ph-init">LP</span></div>
+          <div class="case-id">
+            <span class="case-tag">PROMOTED · TEAM LEAD</span>
+            <h3 class="case-name">Laura Portell Silva</h3>
+            <p class="case-role">Research Engineer <span class="case-arrow">→</span> <strong>Research Digital Assets Management Team Lead</strong>, BSC (ELIXIR-ES)</p>
+          </div>
+        </div>
+        <ul class="case-points">
+          <li>Moved from delivery-only to a <strong>strategic team-lead role</strong> at BSC after the programme.</li>
+          <li>Mentor's encouragement was credited as decisive in pursuing the step.</li>
+          <li>Stronger self-awareness of values, leadership style and team-motivation tools.</li>
+        </ul>
+        <p class="case-quote">"Through my mentor's guidance, I was encouraged to make decisions I had previously been hesitant about."</p>
+        <div class="case-scores">
+          <span class="score-lbl">Evidence of impact</span>
+          <span class="score-cell"><span class="score-dot score-3"></span><span class="score-dot score-3"></span><span class="score-dot score-3"></span> Human capital</span>
+          <span class="score-cell"><span class="score-dot score-2"></span><span class="score-dot score-0"></span><span class="score-dot score-0"></span> Relationship capital</span>
+          <span class="score-cell"><span class="score-dot score-1"></span><span class="score-dot score-0"></span><span class="score-dot score-0"></span> Legacy / uptake</span>
+        </div>
+      </article>
+
+      <!-- Katharina Heil -->
+      <article class="case">
+        <div class="case-head">
+          <div class="case-photo case-photo--kh"><span class="ph-init">KH</span></div>
+          <div class="case-id">
+            <span class="case-tag">EXPANDED REMIT · NOW A MENTOR</span>
+            <h3 class="case-name">Katharina F. Heil</h3>
+            <p class="case-role">Programme Manager, Communities &amp; Training <span class="case-arrow">→</span> <strong>line-management responsibilities added</strong>, ELIXIR Hub</p>
+          </div>
+        </div>
+        <ul class="case-points">
+          <li>Took on line management; navigated transition into management alongside personal life change.</li>
+          <li>Returned to ELEAD <strong>as a mentor</strong> — pipeline closing on itself, one cohort to the next.</li>
+          <li>Champions extending the peer-mentoring model beyond the programme.</li>
+        </ul>
+        <p class="case-quote">"By setting aside time for yourself and engaging in honest conversations, you invest in your future as a leader."</p>
+        <div class="case-scores">
+          <span class="score-lbl">Evidence of impact</span>
+          <span class="score-cell"><span class="score-dot score-2"></span><span class="score-dot score-2"></span><span class="score-dot score-0"></span> Human capital</span>
+          <span class="score-cell"><span class="score-dot score-2"></span><span class="score-dot score-2"></span><span class="score-dot score-0"></span> Relationship capital</span>
+          <span class="score-cell"><span class="score-dot score-1"></span><span class="score-dot score-0"></span><span class="score-dot score-0"></span> Legacy / uptake</span>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="impact-foot">Four illustrative cases from the pilot. Full Impact Case Study available on the ELEAD intranet page. Scoring: <span class="dot-leg score-3"></span> direct evidence · <span class="dot-leg score-2"></span> clear benefit · <span class="dot-leg score-1"></span> indirect evidence.</p>
+  </section>
+
+  <!-- ============ HOW WE MEASURE IT — LOGIC MODEL ============ -->
+  <section class="logic">
+    <div class="sec-head sec-head--inverted">
+      <span class="sec-rule"></span>
+      <h2 class="sec-h">How we measure it</h2>
+      <p class="sec-strap">Every CoS produces outputs. ELEAD also designs for <strong>outcomes</strong> and <strong>impact</strong> — and tracks which lie inside our control, our influence and our interest.</p>
+    </div>
+
+    <div class="lm-table">
+      <div class="lm-headrow">
+        <div class="lm-h lm-h--c">INPUTS</div>
+        <div class="lm-h lm-h--c">ACTIVITIES</div>
+        <div class="lm-h lm-h--c">OUTPUTS</div>
+        <div class="lm-h lm-h--i">OUTCOMES</div>
+        <div class="lm-h lm-h--in">IMPACT</div>
+      </div>
+
+      <div class="lm-row">
+        <div class="lm-cell">CoS funding · de.NBI in-kind</div>
+        <div class="lm-cell">Recruit &amp; train mentors and mentees</div>
+        <div class="lm-cell"><strong>33</strong> mentees · <strong>19</strong> mentors recruited</div>
+        <div class="lm-cell">Increased confidence &amp; leadership skills</div>
+        <div class="lm-cell">Leadership pipeline strengthened <em>(Human Capital, Equal Opps)</em></div>
+      </div>
+
+      <div class="lm-row">
+        <div class="lm-cell">External trainers · curriculum</div>
+        <div class="lm-cell">Deliver curriculum to cohort &amp; wider ELIXIR</div>
+        <div class="lm-cell">Training sessions delivered (some open)</div>
+        <div class="lm-cell">Enhanced cross-Node knowledge exchange</div>
+        <div class="lm-cell">Stronger cross-Node collaboration <em>(Relationship Capital)</em></div>
+      </div>
+
+      <div class="lm-row">
+        <div class="lm-cell">ELIXIR channels &amp; support</div>
+        <div class="lm-cell">Coordination · peer-session facilitation</div>
+        <div class="lm-cell">1:1 + group sessions; impact stories</div>
+        <div class="lm-cell">Raised profile of mentees as ELIXIR leaders</div>
+        <div class="lm-cell">Cultural shift toward inclusive leadership <em>(Public Awareness)</em></div>
+      </div>
+
+      <div class="lm-row">
+        <div class="lm-cell">Scientific Advisory Board</div>
+        <div class="lm-cell">Strategic review · EDI gap analysis</div>
+        <div class="lm-cell">Talks · articles · case studies · position paper</div>
+        <div class="lm-cell">Better awareness of equity &amp; leadership</div>
+        <div class="lm-cell">Broader adoption of the ELEAD model <em>(Scientific Legacy)</em></div>
+      </div>
+
+      <div class="lm-spheres">
+        <div class="sphere sphere-c"><span class="sphere-lbl">SPHERE OF CONTROL</span><span class="sphere-sub">What we directly manage</span></div>
+        <div class="sphere sphere-i"><span class="sphere-lbl">SPHERE OF INFLUENCE</span><span class="sphere-sub">Shaped, not controlled</span></div>
+        <div class="sphere sphere-in"><span class="sphere-lbl">SPHERE OF INTEREST</span><span class="sphere-sub">Strategic aims; system-level</span></div>
+      </div>
+    </div>
+
+    <p class="logic-foot"><strong>The point:</strong> we don't report only what we did. We report what changed, and we are honest about what we can claim and what we can only nudge. The Scientific Advisory Board reviews this logic at every milestone.</p>
+  </section>
+
+  <!-- ============ WHERE WE'RE GOING — SUSTAINABILITY + HANDOVER ============ -->
+  <section class="next">
+    <div class="sec-head">
+      <span class="sec-rule"></span>
+      <h2 class="sec-h">Where ELEAD goes next</h2>
+      <p class="sec-strap">Three live tracks. None individually sufficient. Together, the path to ELEAD 3.0 and beyond.</p>
+    </div>
+
+    <div class="tracks">
+
+      <article class="track track--elixir">
+        <span class="track-badge">TRACK 1</span>
+        <h3 class="track-h">Inside ELIXIR</h3>
+        <ul class="track-list">
+          <li>Proposing an <strong>ELEAD-related activity in the People CoS 2027–28</strong>. Selection is community-driven and competitive.</li>
+          <li>Likely focus 2027–28: <strong>conceptual development &amp; alumni engagement</strong> rather than a new cohort.</li>
+          <li>Discussions with the <strong>ELIXIR Hub</strong> on positioning for the 2029+ five-year programme.</li>
+          <li>Considering a <strong>matching-funds model</strong> with Hub + Node backing for ELEAD 3.0.</li>
+        </ul>
+        <p class="track-flag"><strong>Risk:</strong> as one activity inside a larger CoS, ELEAD loses visibility and strategic focus.</p>
+      </article>
+
+      <article class="track track--ri">
+        <span class="track-badge">TRACK 2</span>
+        <h3 class="track-h">Across infrastructures</h3>
+        <ul class="track-list">
+          <li><strong>EOSC</strong> — exploring funding alignment with leadership &amp; capacity-building strands.</li>
+          <li><strong>Pistoia Alliance</strong> — initial discussions on shared mentoring &amp; diversity frameworks.</li>
+          <li><strong>Instruct-ERIC</strong> — early conversations on cross-RI leadership exchange.</li>
+          <li><strong>Euro-BioImaging</strong> &amp; other ESFRI infrastructures — invited into the conversation.</li>
+        </ul>
+        <p class="track-flag"><strong>Status:</strong> strong interest, no firm commitments yet. Conversations live; partners welcome.</p>
+      </article>
+
+      <article class="track track--nodes">
+        <span class="track-badge">TRACK 3</span>
+        <h3 class="track-h">In your Node</h3>
+        <ul class="track-list">
+          <li><strong>ELIXIR-UK</strong> — national grant submitted for an ELEAD-based peer-mentoring programme for under-represented dRTPs.</li>
+          <li><strong>EMBL-EBI</strong> — Mallory Freeberg has launched a peer-mentoring group for new Team Leads, modelled on ELEAD.</li>
+          <li><strong>AHM 2025 workshop</strong> — ELIXIR-GR, ELIXIR-CH and ELIXIR-ES already exploring national-level spin-offs.</li>
+          <li>Materials are open; the coordination team will support Nodes adapting the model locally.</li>
+        </ul>
+        <p class="track-flag track-flag--cta"><strong>Take it home.</strong> If ELEAD won't return as a Hub programme, it can still return as your Node's programme.</p>
+      </article>
+
+    </div>
+
+    <div class="ask-band">
+      <div class="ask-left">
+        <span class="ask-eyebrow">WHAT WE'RE ASKING FOR AT THIS AHM</span>
+        <h3 class="ask-h">Three conversations.</h3>
+      </div>
+      <ol class="ask-list">
+        <li><strong>If you fund or shape CoS priorities</strong> — talk to us about ELEAD's place in 2027–28 and 2029+.</li>
+        <li><strong>If you sit across infrastructures</strong> — introduce us to your EOSC / Pistoia / RI counterparts.</li>
+        <li><strong>If you lead a Node</strong> — let's plan an ELEAD instance for your community. Materials are ready.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="ftr">
+    <div class="ftr-main">
+
+      <div class="ftr-col ftr-col-brand">
+        <span class="ftr-wordmark">ELEAD</span>
+        <p class="ftr-tagline">ELIXIR Leadership and Diversity mentoring programme</p>
+        <p class="ftr-tagline ftr-tagline--sub">Co-coordinated by ELIXIR-ES, ELIXIR-DE and ELIXIR-UK</p>
+        <span class="ftr-title ftr-title--sub">Hosted within</span>
+        <img class="ftr-brand ftr-brand-elixir" src="assets/img/logos/elixir-logo.svg" alt="ELIXIR">
+      </div>
+
+      <div class="ftr-col ftr-col-people">
+        <span class="ftr-title">Programme co-leads</span>
+        <ul class="ftr-people">
+          <li><strong>Alba Jené-Sanz</strong> <em>(BSC, ELIXIR-ES)</em></li>
+          <li><strong>Irena Maus</strong> <em>(de.NBI, ELIXIR-DE)</em></li>
+          <li><strong>Nils-Christian Lübke</strong> <em>(de.NBI, ELIXIR-DE)</em></li>
+          <li><strong>Xènia Pérez Sitjà</strong> <em>(Earlham, ELIXIR-UK)</em></li>
+        </ul>
+        <span class="ftr-title ftr-title--sub">Scientific Advisory Board</span>
+        <p class="ftr-sub">Independent strategic oversight. Reviews progress, impact framework and direction at each milestone.</p>
+      </div>
+
+      <div class="ftr-col ftr-col-meta">
+        <span class="ftr-title">Get involved</span>
+        <p class="ftr-email">elead-elixir<wbr>@bsc.es</p>
+        <p class="ftr-url">elixir-europe.org/<br>internal-projects/elead2</p>
+
+        <span class="ftr-title ftr-title--sub">Where</span>
+        <div class="ftr-where">
+          <span class="where-pin" aria-hidden="true">📍</span>
+          <div class="where-text">
+            <p class="where-event">All Hands ELIXIR 2026</p>
+            <p class="where-place">Lyon, France · June 2026</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ftr-col ftr-col-scan">
+        <span class="ftr-title">Scan me</span>
+        <img class="ftr-qr" src="assets/img/qr-placeholder.svg" alt="QR to ELEAD page">
+        <p class="ftr-qr-cap">elixir-europe.org/<br>internal-projects/elead2</p>
+      </div>
+
+    </div>
+
+    <div class="ftr-bar">
+      <span class="ftr-copy">© 2026 ELEAD · CC-BY 4.0 · Impact Case Study (2025) authored by Xènia Pérez Sitjà</span>
+      <a class="ett-logo" href="https://elixir-belgium.github.io/elixir-toolkit-theme">
+        Built with
+        <img src="assets/img/logos/ett-logo.svg" alt="ELIXIR Toolkit Theme">
+      </a>
+    </div>
+  </footer>
+
+</section>
+</div><!-- /.poster-stage -->
+
+</body>
+</html>
