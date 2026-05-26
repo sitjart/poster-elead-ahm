@@ -1,0 +1,437 @@
+/* ============================================================
+   ELEAD CAMPAIGN poster — A0 portrait (841 × 1189 mm)
+   "Show your work." — All Hands ELIXIR 2026, Lyon.
+   Eye-catcher poster; the dense flyer (poster.html) carries detail.
+   ============================================================ */
+
+@page { size: A0 portrait; margin: 0; }
+
+:root {
+  --navy:        #023452;
+  --navy-deep:   #001F33;
+  --navy-100:    #cdd9e3;
+  --orange:      #f47d20;
+  --orange-deep: #c95f06;
+  --teal:        #037eab;
+  --ink:         #2b2b2b;
+  --muted:       #6c757d;
+  --line:        #e8e8e8;
+  --bg:          #ffffff;
+  --bg-band:     #f4f7fa;
+
+  --font-display: "Work Sans", "Lato", system-ui, sans-serif;
+  --font-body:    "Lato", system-ui, sans-serif;
+  --font-serif:   "Source Serif 4", Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #555;
+  font-family: var(--font-body);
+  color: var(--ink);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.poster {
+  width: 841mm;
+  height: 1189mm;
+  margin: 0 auto;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  font-size: 20pt;
+  line-height: 1.25;
+  overflow: hidden;
+}
+
+/* ============== HERO (NAVY) ============== */
+.hero {
+  background:
+    radial-gradient(60% 80% at 78% 28%, rgba(244,125,32,0.22), transparent 70%),
+    linear-gradient(180deg, var(--navy) 0%, var(--navy) 80%, var(--navy-deep) 100%);
+  color: #fff;
+  padding: 28mm 28mm 22mm;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  min-height: 540mm;
+  overflow: hidden;
+}
+/* Diagonal orange/navy stripe at the bottom, like a campaign band */
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4mm;
+  background: linear-gradient(90deg, var(--orange) 0%, var(--orange) 36%, #fff 36%, #fff 100%);
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6mm;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22pt;
+  letter-spacing: 5pt;
+  color: var(--orange);
+  text-transform: uppercase;
+}
+.eb-mark {
+  display: inline-block;
+  width: 18mm;
+  height: 4mm;
+  background: var(--orange);
+  border-radius: 1mm;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 380pt;
+  line-height: 0.84;
+  letter-spacing: -10pt;
+  color: #fff;
+  margin: 18mm 0 14mm;
+  display: flex;
+  flex-direction: column;
+}
+.ht-line {
+  display: block;
+}
+.ht-line--accent {
+  color: var(--orange);
+  font-style: italic;
+}
+
+.hero-sub {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 50pt;
+  line-height: 1.05;
+  color: rgba(255,255,255,.95);
+  margin: 0;
+  max-width: 540mm;
+}
+.hero-sub strong {
+  font-weight: 700;
+  color: #fff;
+  display: inline-block;
+}
+
+/* Top-right "ON THE RECORD" round stamp — gives the campaign a stamp/seal motif */
+.hero-stamp {
+  position: absolute;
+  top: 36mm;
+  right: 34mm;
+  width: 120mm;
+  height: 120mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
+.stamp-ring {
+  position: absolute;
+  inset: 0;
+  border: 1.4mm solid var(--orange);
+  border-radius: 50%;
+  opacity: 0.85;
+}
+.stamp-ring::before, .stamp-ring::after {
+  content: "";
+  position: absolute;
+  inset: 4mm;
+  border: 0.4mm dashed var(--orange);
+  border-radius: 50%;
+  opacity: 0.55;
+}
+.stamp-ring::after {
+  inset: 8mm;
+  border-style: solid;
+  opacity: 0.25;
+}
+.stamp-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--orange);
+  text-align: center;
+  letter-spacing: 2pt;
+  display: flex;
+  flex-direction: column;
+  gap: 1mm;
+  line-height: 1;
+}
+.stamp-text > span {
+  font-size: 19pt;
+  letter-spacing: 4pt;
+}
+.stamp-text .stamp-big {
+  font-size: 36pt;
+  letter-spacing: 2pt;
+  margin: 1mm 0;
+}
+
+/* ============== EVIDENCE BAND (WHITE) ============== */
+.proof {
+  flex: 1 1 auto;
+  padding: 22mm 28mm 18mm;
+  display: flex;
+  flex-direction: column;
+  gap: 12mm;
+  background: var(--bg);
+}
+
+.proof-strap {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 38pt;
+  line-height: 1.1;
+  color: var(--navy);
+  margin: 0;
+  letter-spacing: -0.5pt;
+}
+.proof-strap span {
+  display: block;
+  font-weight: 400;
+  font-size: 26pt;
+  color: var(--ink);
+  margin-top: 4mm;
+  line-height: 1.2;
+}
+
+.trajectories {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9mm;
+}
+
+.traj {
+  display: grid;
+  grid-template-columns: 80mm 1fr;
+  gap: 14mm;
+  align-items: start;
+  padding: 9mm 0 9mm;
+  border-top: 0.6mm solid var(--line);
+  position: relative;
+}
+.traj:first-child { border-top: 1.2mm solid var(--navy); }
+.traj:last-child { padding-bottom: 0; }
+
+.traj-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 80pt;
+  line-height: 0.9;
+  color: var(--orange);
+  letter-spacing: -3pt;
+}
+.traj:nth-child(2) .traj-num { color: var(--teal); }
+.traj:nth-child(3) .traj-num { color: var(--navy); }
+.traj:nth-child(4) .traj-num { color: var(--orange-deep); }
+
+.traj-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2mm;
+}
+
+.traj-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 50pt;
+  line-height: 1.0;
+  color: var(--navy);
+  margin: 0 0 3mm;
+  letter-spacing: -1.5pt;
+}
+
+.traj-from {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 24pt;
+  line-height: 1.15;
+  color: var(--muted);
+  margin: 0;
+}
+
+.traj-to {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 28pt;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 1mm 0 2mm;
+}
+.traj-to strong { color: var(--navy); font-weight: 700; }
+.arrow {
+  display: inline-block;
+  color: var(--orange);
+  font-weight: 700;
+  padding: 0 3mm 0 0;
+}
+
+.traj-extra {
+  font-family: var(--font-body);
+  font-size: 21pt;
+  line-height: 1.25;
+  color: var(--ink);
+  margin: 0;
+}
+.traj-extra strong { color: var(--navy); font-weight: 700; }
+
+/* ============== CLOSING (NAVY-DEEP) ============== */
+.closer {
+  background: var(--navy-deep);
+  color: #fff;
+  padding: 22mm 28mm 22mm;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 22mm;
+  align-items: center;
+  margin-top: auto;
+  flex-shrink: 0;
+  position: relative;
+}
+.closer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 28mm;
+  width: 60mm;
+  height: 3mm;
+  background: var(--orange);
+}
+
+.closer-cta {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5mm;
+}
+.cta-eyebrow {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 24pt;
+  letter-spacing: 4pt;
+  color: var(--orange);
+}
+.cta-big {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 70pt;
+  line-height: 0.95;
+  color: #fff;
+  letter-spacing: -1.5pt;
+}
+.cta-where {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 25pt;
+  line-height: 1.2;
+  color: rgba(255,255,255,.85);
+}
+.cta-where em {
+  font-style: italic;
+  font-weight: 700;
+  color: var(--orange);
+}
+
+.closer-right {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12mm;
+  align-items: center;
+}
+
+.closer-scan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2mm;
+}
+.closer-qr {
+  width: 92mm;
+  height: 92mm;
+  background: #fff;
+  padding: 3mm;
+  border-radius: 2mm;
+}
+.closer-url {
+  font-family: var(--font-body);
+  font-size: 16pt;
+  color: rgba(255,255,255,.78);
+  margin: 0;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.closer-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4mm;
+}
+.closer-email {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 32pt;
+  color: var(--orange);
+  margin: 0;
+  line-height: 1.0;
+  letter-spacing: -0.5pt;
+  word-break: break-all;
+}
+.closer-email strong {
+  font-weight: 700;
+  color: #fff;
+}
+.closer-where {
+  font-family: var(--font-body);
+  font-size: 20pt;
+  color: rgba(255,255,255,.88);
+  margin: 0;
+  line-height: 1.2;
+}
+.closer-credit {
+  font-family: var(--font-body);
+  font-size: 18pt;
+  color: rgba(255,255,255,.55);
+  margin: 0;
+  line-height: 1.3;
+}
+.closer-credit em {
+  font-style: normal;
+  color: rgba(255,255,255,.4);
+}
+
+/* ============== SCREEN PREVIEW ============== */
+@media screen {
+  html, body {
+    margin: 0;
+    background: #555;
+  }
+  body {
+    box-sizing: border-box;
+    padding: 16px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .poster-stage { flex-shrink: 0; }
+  .poster {
+    transform-origin: top left;
+    box-shadow: 0 6px 30px rgba(0,0,0,.25);
+  }
+}
