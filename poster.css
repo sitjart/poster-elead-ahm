@@ -55,7 +55,7 @@ html, body {
   display: flex;
   flex-direction: column;
   font-size: 20pt;
-  line-height: 1.4;
+  line-height: 1.3;
   overflow: hidden;
 }
 
@@ -149,7 +149,7 @@ html, body {
   font-family: var(--font-display);
   font-weight: 500;
   font-size: 26pt;
-  line-height: 1.25;
+  line-height: 1.15;
   color: var(--ink);
   margin: 0 0 8mm;
   max-width: 430mm;
@@ -221,7 +221,7 @@ html, body {
 .flag-p {
   font-family: var(--font-body);
   font-size: 16pt;
-  line-height: 1.4;
+  line-height: 1.3;
   color: rgba(255,255,255,.92);
   margin: 0;
 }
@@ -239,7 +239,7 @@ html, body {
 .flag-list li {
   font-family: var(--font-body);
   font-size: 14pt;
-  line-height: 1.35;
+  line-height: 1.25;
   color: rgba(255,255,255,.88);
   padding-left: 5mm;
   position: relative;
@@ -283,8 +283,8 @@ html, body {
 }
 .gap-caption {
   font-family: var(--font-body);
-  font-size: 18pt;
-  line-height: 1.35;
+  font-size: 16pt;
+  line-height: 1.25;
   color: var(--ink);
   margin: 0;
 }
@@ -435,8 +435,8 @@ html, body {
 .claim-big {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 34pt;
-  line-height: 1.15;
+  font-size: 30pt;
+  line-height: 1.1;
   color: var(--navy);
   margin: 0;
   letter-spacing: -0.5pt;
@@ -444,52 +444,30 @@ html, body {
 .claim-big strong { color: var(--orange); font-weight: 900; }
 .claim-small {
   font-family: var(--font-body);
-  font-size: 21pt;
-  line-height: 1.4;
+  font-size: 19pt;
+  line-height: 1.3;
   color: var(--ink);
   margin: 0;
 }
 
-.claim-pillars {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 5mm;
-  margin-top: 2mm;
-}
-.pillar {
-  background: #fff;
-  border: 0.4mm solid var(--line);
-  border-top: 3mm solid var(--orange);
-  border-radius: 2mm;
-  padding: 6mm 5mm;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5mm;
-  box-shadow: 0 0.6mm 1.4mm rgba(2,52,82,.05);
-}
-.pillar:nth-child(2) { border-top-color: var(--teal); }
-.pillar:nth-child(3) { border-top-color: var(--navy); }
-.pillar-n {
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 24pt;
-  color: var(--orange);
-  line-height: 1;
-}
-.pillar:nth-child(2) .pillar-n { color: var(--teal); }
-.pillar:nth-child(3) .pillar-n { color: var(--navy); }
-.pillar-h {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 19pt;
-  color: var(--navy);
-  line-height: 1.1;
-}
-.pillar-p {
+.claim-pillars-inline {
   font-family: var(--font-body);
   font-size: 15pt;
+  line-height: 1.3;
   color: var(--ink);
-  line-height: 1.35;
+  margin: 2mm 0 0;
+  padding: 4mm 5mm;
+  background: #fff;
+  border-left: 1.5mm solid var(--orange);
+  border-radius: 1.5mm;
+}
+.claim-pillars-inline strong {
+  color: var(--navy);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1pt;
+  font-size: 13pt;
+  margin-right: 2mm;
 }
 
 /* ============== IMPACT, BY NAME ============== */
@@ -598,7 +576,7 @@ html, body {
   padding-left: 6mm;
   font-family: var(--font-body);
   font-size: 14pt;
-  line-height: 1.4;
+  line-height: 1.3;
   color: var(--ink);
 }
 .case-points li::before {
@@ -615,12 +593,12 @@ html, body {
 .case-quote {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 14pt;
-  line-height: 1.4;
+  font-size: 13pt;
+  line-height: 1.3;
   color: var(--navy);
   margin: 0;
   background: var(--bg-band);
-  padding: 4mm 6mm;
+  padding: 3.5mm 5mm;
   border-radius: 2mm;
   border-left: 1.2mm solid var(--orange);
 }
@@ -784,11 +762,11 @@ html, body {
 
 .logic-foot {
   font-family: var(--font-body);
-  font-size: 19pt;
-  line-height: 1.45;
+  font-size: 16pt;
+  line-height: 1.3;
   color: rgba(255,255,255,.85);
   margin: 0;
-  padding: 4mm 6mm 0;
+  padding: 2mm 0 0 6mm;
   border-left: 2mm solid var(--orange);
 }
 .logic-foot strong { color: #fff; font-weight: 800; }
@@ -855,7 +833,7 @@ html, body {
   padding-left: 6mm;
   font-family: var(--font-body);
   font-size: 14pt;
-  line-height: 1.4;
+  line-height: 1.3;
   color: var(--ink);
 }
 .track-list li::before {
@@ -879,7 +857,7 @@ html, body {
   border-radius: 1.5mm;
   font-family: var(--font-body);
   font-size: 13pt;
-  line-height: 1.35;
+  line-height: 1.25;
   color: var(--ink);
 }
 .track-flag strong { color: var(--navy); font-weight: 700; }
@@ -935,7 +913,7 @@ html, body {
   counter-increment: ask;
   font-family: var(--font-body);
   font-size: 15pt;
-  line-height: 1.4;
+  line-height: 1.3;
   color: rgba(255,255,255,.92);
   padding-left: 13mm;
   position: relative;
