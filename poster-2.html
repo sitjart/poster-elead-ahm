@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Not yet. — ELEAD campaign poster, AHM 2026</title>
+  <title>Not yet. – ELEAD A5 flyer, AHM 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="poster-2.css">
   <script>
-    function fitPosterToViewport() {
+    // Fit the A5 sheet to the viewport HEIGHT on first load.
+    function fitFlyerToViewport() {
       if (window.matchMedia('print').matches) return;
-      var stage = document.querySelector('.poster-stage');
-      var p     = document.querySelector('.poster');
+      var stage = document.querySelector('.flyer-stage');
+      var p     = document.querySelector('.flyer');
       if (!stage || !p) return;
       p.style.transform = 'none';
       stage.style.width = '';
@@ -19,31 +20,33 @@
       var w = p.offsetWidth, h = p.offsetHeight;
       var pad = 32;
       var s = Math.min((window.innerHeight - pad) / h, 1);
+      // For the small A5, scale UP if the viewport allows (cap at 3×).
+      if (s === 1) s = Math.min((window.innerHeight - pad) / h, 3);
       p.style.transform = 'scale(' + s + ')';
       stage.style.width  = (s * w) + 'px';
       stage.style.height = (s * h) + 'px';
     }
-    function clearPosterScale() {
-      var stage = document.querySelector('.poster-stage');
-      var p     = document.querySelector('.poster');
+    function clearFlyerScale() {
+      var stage = document.querySelector('.flyer-stage');
+      var p     = document.querySelector('.flyer');
       if (p) p.style.transform = 'none';
       if (stage) { stage.style.width = ''; stage.style.height = ''; }
     }
-    window.addEventListener('DOMContentLoaded', fitPosterToViewport);
-    window.addEventListener('beforeprint', clearPosterScale);
-    window.addEventListener('afterprint', fitPosterToViewport);
+    window.addEventListener('DOMContentLoaded', fitFlyerToViewport);
+    window.addEventListener('beforeprint', clearFlyerScale);
+    window.addEventListener('afterprint', fitFlyerToViewport);
   </script>
 </head>
 <body>
 
-<div class="poster-stage">
-<section class="poster">
+<div class="flyer-stage">
+<section class="flyer">
 
   <!-- ============ HERO (NAVY) ============ -->
   <header class="hero">
     <div class="hero-eyebrow">
       <span class="eb-mark"></span>
-      <span class="eb-text">ELEAD · ELIXIR LEADERSHIP &amp; DIVERSITY MENTORING · 2023–2026</span>
+      <span class="eb-text">ELEAD · ELIXIR LEADERSHIP &amp; DIVERSITY · 2023–2026</span>
     </div>
 
     <h1 class="hero-title">
@@ -51,28 +54,22 @@
       <span class="ht-line ht-line--accent">yet.</span>
     </h1>
 
-    <ul class="hero-facts">
-      <li><span class="fact-n">95%</span><span class="fact-l">of ELIXIR Technical Coordinators are men.</span></li>
-      <li><span class="fact-n">65%</span><span class="fact-l">of Heads of Node are men.</span></li>
-      <li><span class="fact-n">75%</span><span class="fact-l">of Node Coordinators are women.</span></li>
-    </ul>
-
-    <p class="hero-sub">Parity isn't here. <strong>Not in ELIXIR. Not in 2026.</strong></p>
+    <p class="hero-sub">Parity isn't here.<br><strong>Not in ELIXIR. Not in 2026.</strong></p>
   </header>
 
-  <!-- ============ EVIDENCE BAND (WHITE) — THE FULL 2026 BREAKDOWN ============ -->
+  <!-- ============ EVIDENCE BAND (WHITE) ============ -->
   <section class="proof">
 
-    <div class="proof-head">
-      <h2 class="proof-h">The seats, in 2026.</h2>
-      <p class="proof-strap">Counts of women and men in centrally-established ELIXIR leadership roles. <strong>Women coordinate. Men still hold most of the seats with budgets, strategy and technical authority.</strong></p>
-    </div>
+    <h2 class="proof-h">The seats, 2026.</h2>
+    <p class="proof-strap">Women coordinate. Men still hold most of the seats with budgets, strategy and technical authority.</p>
 
     <div class="bars">
 
       <div class="bar-row bar-row--gap">
-        <span class="bar-role">Head of Node</span>
-        <span class="bar-note">decision-making seat</span>
+        <div class="bar-meta">
+          <span class="bar-role">Head of Node</span>
+          <span class="bar-note">decision-making seat</span>
+        </div>
         <div class="bar">
           <span class="bar-w" style="width:34.6%"><strong>9</strong></span>
           <span class="bar-m" style="width:65.4%"><strong>17</strong></span>
@@ -81,8 +78,10 @@
       </div>
 
       <div class="bar-row">
-        <span class="bar-role">Deputy Head</span>
-        <span class="bar-note">near parity</span>
+        <div class="bar-meta">
+          <span class="bar-role">Deputy Head</span>
+          <span class="bar-note">near parity</span>
+        </div>
         <div class="bar">
           <span class="bar-w" style="width:52.9%"><strong>9</strong></span>
           <span class="bar-m" style="width:47.1%"><strong>8</strong></span>
@@ -91,8 +90,10 @@
       </div>
 
       <div class="bar-row">
-        <span class="bar-role">Node Coordinator</span>
-        <span class="bar-note">the "glue" role</span>
+        <div class="bar-meta">
+          <span class="bar-role">Node Coordinator</span>
+          <span class="bar-note">the "glue" role</span>
+        </div>
         <div class="bar">
           <span class="bar-w" style="width:75%"><strong>12</strong></span>
           <span class="bar-m" style="width:25%"><strong>4</strong></span>
@@ -101,8 +102,10 @@
       </div>
 
       <div class="bar-row bar-row--gap">
-        <span class="bar-role">Technical Coordinator</span>
-        <span class="bar-note">the gap is most extreme here</span>
+        <div class="bar-meta">
+          <span class="bar-role">Technical Coordinator</span>
+          <span class="bar-note">most extreme – widening</span>
+        </div>
         <div class="bar">
           <span class="bar-w" style="width:5%"><strong>1</strong></span>
           <span class="bar-m" style="width:95%"><strong>19</strong></span>
@@ -111,8 +114,10 @@
       </div>
 
       <div class="bar-row">
-        <span class="bar-role">Training Coordinator</span>
-        <span class="bar-note">near parity</span>
+        <div class="bar-meta">
+          <span class="bar-role">Training Coordinator</span>
+          <span class="bar-note">parity held</span>
+        </div>
         <div class="bar">
           <span class="bar-w" style="width:52.2%"><strong>12</strong></span>
           <span class="bar-m" style="width:47.8%"><strong>11</strong></span>
@@ -122,11 +127,7 @@
 
     </div>
 
-    <div class="proof-legend">
-      <span class="leg-key"><span class="leg-sw leg-sw-w"></span>women</span>
-      <span class="leg-key"><span class="leg-sw leg-sw-m"></span>men</span>
-      <span class="leg-note">Numbers inside bars are headcounts. Deputies in technical, training and coordinator roles are not counted.</span>
-    </div>
+    <p class="proof-foot"><span class="leg-key"><span class="leg-sw leg-sw-w"></span>women</span> <span class="leg-key"><span class="leg-sw leg-sw-m"></span>men</span> <em>· numbers inside bars are headcounts · deputies in non-deputy roles not counted</em></p>
 
   </section>
 
@@ -135,26 +136,23 @@
 
     <div class="closer-left">
       <p class="closer-eyebrow">ELEAD IS THE RESPONSE.</p>
-      <h2 class="closer-h"><strong>33 leaders trained.<br>Four named promotions.<br></strong>The work continues.</h2>
+      <p class="closer-h"><strong>33 leaders trained. Four named promotions.</strong> The work continues.</p>
       <p class="closer-tracks">Across infrastructures · Inside Nodes · <em>Talk to us today.</em></p>
     </div>
 
     <div class="closer-right">
-      <div class="closer-scan">
-        <img class="closer-qr" src="assets/img/qr-placeholder.svg" alt="QR to ELEAD page">
-        <p class="closer-url">elixir-europe.org/<br>internal-projects/elead2</p>
-      </div>
+      <img class="closer-qr" src="assets/img/qr-placeholder.svg" alt="QR to ELEAD page">
       <div class="closer-meta">
         <p class="closer-email">elead-elixir@bsc.es</p>
-        <p class="closer-where">All Hands ELIXIR 2026 · Lyon · poster session</p>
-        <p class="closer-credit">Co-leads — Alba Jené-Sanz <em>(BSC)</em> · Irena Maus &amp; Nils-Christian Lübke <em>(de.NBI)</em> · Xènia Pérez Sitjà <em>(Earlham)</em></p>
+        <p class="closer-url">elixir-europe.org/internal-projects/elead2</p>
+        <p class="closer-where">AHM 2026 · Lyon</p>
       </div>
     </div>
 
   </footer>
 
 </section>
-</div><!-- /.poster-stage -->
+</div><!-- /.flyer-stage -->
 
 </body>
 </html>
