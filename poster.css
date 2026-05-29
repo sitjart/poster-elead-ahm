@@ -99,21 +99,15 @@ html, body {
 
 /* ============== HEADER ============== */
 .hdr {
-  display: grid;
-  grid-template-columns: 2.1fr 0.8fr;
-  gap: 16mm;
-  padding: 26mm 22mm 14mm;
-  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 9mm;
+  padding: 20mm 22mm 0;
   position: relative;
 }
-.hdr::after {
-  content: "";
-  position: absolute;
-  left: 22mm;
-  right: 22mm;
-  bottom: 5mm;
-  height: 1mm;
-  background: linear-gradient(90deg, var(--orange) 0%, var(--orange) 32%, var(--navy) 32%, var(--navy) 100%);
+.hdr-top {
+  display: flex;
+  flex-direction: column;
 }
 
 .eyebrow {
@@ -122,17 +116,18 @@ html, body {
   font-size: 22pt;
   letter-spacing: 1.5pt;
   color: var(--orange);
-  margin: 0 0 9mm;
+  margin: 0 0 6mm;
   text-transform: uppercase;
 }
 .hdr-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 100pt;
+  font-size: 110pt;
   line-height: 0.92;
   letter-spacing: -2pt;
   color: var(--navy);
-  margin: 0 0 6mm;
+  margin: 0 0 5mm;
+  padding-top: 20px;
 }
 .hdr-title .t-orange { color: var(--orange); }
 .hdr-title .t-block {
@@ -148,93 +143,47 @@ html, body {
   font-size: 24pt;
   line-height: 1.2;
   color: var(--ink);
-  margin: 0 0 8mm;
-  max-width: 440mm;
+  margin: 0;
 }
 
-.hdr-stats {
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  gap: 9mm;
-  margin-top: auto;
-}
-.stat {
-  display: flex;
-  flex-direction: column;
-  gap: 1mm;
-  padding-left: 5mm;
-  border-left: 1.2mm solid var(--orange);
-}
-.stat-num {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 50pt;
-  line-height: 1;
-  color: var(--navy);
-}
-.stat-lbl {
-  font-family: var(--font-body);
-  font-size: 22pt;
-  line-height: 1.15;
-  color: var(--ink);
-}
-.stat-lbl em {
-  display: block;
-  font-style: normal;
-  color: var(--muted);
-  font-size: 22pt;
-  margin-top: 0.5mm;
-}
-
-/* The "Now what?" flag – a square-ish navy panel with a shallow
-   left-pointing arrow notch. Right edge bleeds to the poster's right
-   margin; an orange stripe on the right plays the role of the old
-   border-left accent. */
-.hdr-flag {
+/* The "Now what?" flag – horizontal banner spanning the page below the title */
+.hdr-flag--horizontal {
   background: var(--navy);
   color: #fff;
   position: relative;
-  padding: 14mm 28mm 14mm 26mm;
-  margin-right: -22mm; /* bleed through the .hdr right padding to the sheet edge */
-  display: flex;
-  flex-direction: column;
-  gap: 5mm;
-  clip-path: polygon(14mm 0%, 100% 0%, 100% 100%, 14mm 100%, 0% 50%);
+  padding: 7mm 14mm 8mm 16mm;
+  margin: 0 -22mm; /* bleed to both edges of the sheet */
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 14mm;
+  border-top: 2.5mm solid var(--orange);
 }
-.hdr-flag::after {
-  /* orange tail on the right edge — replaces the old border-left accent */
+.hdr-flag--horizontal::before {
+  /* small orange wedge nudge on the left */
   content: "";
   position: absolute;
+  left: 0;
   top: 0;
-  right: 0;
   bottom: 0;
-  width: 5mm;
+  width: 6mm;
   background: var(--orange);
-}
-.flag-logo {
-  display: block;
-  height: 26mm;
-  width: auto;
-  align-self: flex-start;
-  filter: brightness(0) invert(1);
-  opacity: 0.95;
-  margin-bottom: -1mm;
 }
 .flag-eyebrow {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 44pt;
+  font-size: 46pt;
   letter-spacing: 4pt;
   color: var(--orange);
   line-height: 1;
+  white-space: nowrap;
 }
 .flag-p {
   font-family: var(--font-body);
-  font-size: 26pt;
+  font-size: 22pt;
   line-height: 1.25;
   color: rgba(255,255,255,.95);
   margin: 0;
-  max-width: 100%;
 }
 .flag-p strong { color: var(--orange); font-weight: 700; }
 .flag-p em {
@@ -245,11 +194,11 @@ html, body {
 
 /* ============== WHY ELEAD EXISTS ============== */
 .why {
-  padding: 12mm 22mm 12mm;
+  padding: 15mm 22mm;
   background: var(--bg-band);
   display: flex;
   flex-direction: column;
-  gap: 6mm;
+  gap: 5mm;
 }
 
 .why-grid {
@@ -272,7 +221,7 @@ html, body {
 }
 .gap-caption {
   font-family: var(--font-body);
-  font-size: 18pt;
+  font-size: 24pt;
   line-height: 1.2;
   color: var(--ink);
   margin: 0;
@@ -292,7 +241,7 @@ html, body {
   gap: 3mm;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 18pt;
+  font-size: 20pt;
   color: var(--ink);
 }
 .gap-sw {
@@ -324,7 +273,7 @@ html, body {
 .gap-role {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 18pt;
+  font-size: 20pt;
   color: var(--navy);
   line-height: 1.1;
 }
@@ -332,7 +281,7 @@ html, body {
   display: block;
   font-style: italic;
   font-weight: 400;
-  font-size: 16pt;
+  font-size: 17pt;
   color: var(--muted);
   margin-top: 0.5mm;
 }
@@ -355,13 +304,13 @@ html, body {
 .gap-yr-label {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 16pt;
+  font-size: 18pt;
   color: var(--muted);
 }
 .gap-yr-pct {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 16pt;
+  font-size: 18pt;
   color: var(--ink);
   text-align: right;
 }
@@ -378,7 +327,7 @@ html, body {
 .gap-nodata {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 12pt;
+  font-size: 16pt;
   color: var(--muted);
 }
 .gap-bar {
@@ -462,7 +411,7 @@ html, body {
   position: relative;
   padding-left: 7mm;
   font-family: var(--font-body);
-  font-size: 22pt;
+  font-size: 24pt;
   line-height: 1.25;
   color: var(--ink);
 }
@@ -525,21 +474,123 @@ html, body {
   font-weight: 700;
 }
 
+/* ============== COMMUNITY (photo band with stats overlay) ============== */
+.community {
+  padding: 10mm 22mm 8mm;
+  display: flex;
+  flex-direction: column;
+  gap: 3mm;
+}
+.community-strip {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.35fr 1fr;
+  gap: 0;
+  align-items: stretch;
+  margin: 0 -22mm; /* bleed to both sheet edges, like the NOW WHAT? banner */
+}
+.community-photo {
+  margin: 0;
+  border-radius: 0;
+  overflow: hidden;
+  height: 118mm;
+  background: var(--bg-band);
+  border: 0;
+  box-shadow: none;
+}
+.community-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 70%; /* lift faces above the stats ribbon */
+}
+.community-photo--hero img { object-position: center 65%; }
+.community-photo--side:first-of-type img { object-position: center 80%; }
+
+/* Frosted ribbon sitting on top of the photo strip — also bleeds edge-to-edge */
+.community-stats {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  background: rgba(2,31,51,.88);
+  border-radius: 0;
+  padding: 4mm 22mm;
+  box-shadow: 0 -0.6mm 2mm rgba(0,0,0,.18);
+  border-top: 2mm solid var(--orange);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.community-stats .stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5mm;
+  padding: 0 5mm;
+  border-left: 0.8mm solid var(--orange);
+  color: #fff;
+}
+.community-stats .stat:first-child { padding-left: 3mm; }
+.community-stats .stat-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 48pt;
+  line-height: 1;
+  color: #fff;
+}
+.community-stats .stat-lbl {
+  font-family: var(--font-body);
+  font-size: 18pt;
+  line-height: 1.15;
+  color: rgba(255,255,255,.95);
+}
+.community-stats .stat-lbl em {
+  display: block;
+  font-style: normal;
+  color: rgba(255,255,255,.6);
+  font-size: 16pt;
+  margin-top: 0;
+}
+
+.community-cap {
+  display: flex;
+  align-items: baseline;
+  gap: 5mm;
+  font-family: var(--font-body);
+  font-size: 18pt;
+  line-height: 1.25;
+  color: var(--ink);
+  margin: 0;
+  padding-top: 1mm;
+}
+.community-cap-eyebrow {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 17pt;
+  letter-spacing: 2.5pt;
+  color: var(--orange);
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.community-cap-text em { font-style: italic; }
+
 /* ============== IMPACT, BY NAME ============== */
 .impact {
-  padding: 12mm 22mm 12mm;
+  padding: 8mm 22mm 10mm;
   display: flex;
-  margin-top: 40px;
-  margin-bottom:  35px;
   flex-direction: column;
-  gap: 6mm;
+  gap: 5mm;
 }
 
 /* --- 3-column impact grid: cases (col 1 + 2) and capitals legend (col 3) --- */
 .impact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 0.85fr;
-  gap: 8mm;
+  gap: 6mm;
   align-items: stretch;
 }
 
@@ -548,7 +599,7 @@ html, body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 7mm;
+  gap: 5mm;
 }
 
 /* --- Capitals legend sidebar (column 3) --- */
@@ -641,22 +692,22 @@ html, body {
   background: #fff;
   border: 0.5mm solid var(--line);
   border-radius: 2.5mm;
-  padding: 6mm 7mm;
+  padding: 5mm 6mm;
   display: flex;
   flex-direction: column;
-  gap: 3mm;
+  gap: 8mm;
   box-shadow: 0 0.8mm 2.4mm rgba(2,52,82,.05);
 }
 
 .case-head {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 5mm;
+  gap: 8mm;
   align-items: center;
 }
 .case-photo {
-  width: 28mm;
-  height: 28mm;
+  width: 26mm;
+  height: 26mm;
   border-radius: 50%;
   flex-shrink: 0;
   overflow: hidden;
@@ -675,7 +726,7 @@ html, body {
 .case-tag {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 18pt;
+  font-size: 19pt;
   letter-spacing: 1.5pt;
   color: var(--orange);
   text-transform: uppercase;
@@ -691,7 +742,7 @@ html, body {
 }
 .case-role {
   font-family: var(--font-body);
-  font-size: 18pt;
+  font-size: 22pt;
   line-height: 1.2;
   color: var(--ink);
   margin: 0;
@@ -710,16 +761,16 @@ html, body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 2mm;
-  padding-top: 3mm;
+  gap: 1.6mm;
+  padding-top: 2.5mm;
   border-top: 0.3mm solid var(--line);
 }
 .case-points li {
   position: relative;
   padding-left: 7mm;
   font-family: var(--font-body);
-  font-size: 20pt;
-  line-height: 1.2;
+  font-size: 22pt;
+  line-height: 1.22;
   color: var(--ink);
 }
 .case-points li::before {
@@ -739,7 +790,7 @@ html, body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3mm;
-  padding-top: 4mm;
+  padding-top: 3mm;
   border-top: 0.3mm dashed var(--line);
 }
 .score-cell {
@@ -795,15 +846,15 @@ html, body {
 
 /* --- Impact Case Study citation card (lives inside capitals-legend column) --- */
 .citation {
-  margin: 5mm 0 0;
-  padding: 6mm 6mm 6mm;
+  margin: 4mm 0 0;
+  padding: 4mm 5mm;
   background: #fff;
   border: 0.5mm solid var(--line);
   border-top: 2.5mm solid var(--navy);
   border-radius: 2mm;
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 6mm;
+  gap: 4mm;
   align-items: center;
   box-shadow: 0 0.6mm 1.6mm rgba(2,52,82,.06);
 }
@@ -813,7 +864,7 @@ html, body {
   justify-self: start;
 }
 .cite-cover img {
-  height: 105mm;
+  height: 62mm;
   width: auto;
   max-width: 100%;
   object-fit: contain;
@@ -830,7 +881,7 @@ html, body {
 .cite-eyebrow {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 16pt;
+  font-size: 18pt;
   letter-spacing: 2pt;
   color: var(--orange);
   text-transform: uppercase;
@@ -838,7 +889,7 @@ html, body {
 }
 .cite-meta {
   font-family: var(--font-body);
-  font-size: 18pt;
+  font-size: 19pt;
   line-height: 1.25;
   color: var(--ink);
   margin: 1mm 0 0;
@@ -846,7 +897,7 @@ html, body {
 .cite-meta em { font-style: italic; }
 .cite-doi {
   font-family: var(--font-body);
-  font-size: 18pt;
+  font-size: 19pt;
   color: var(--ink);
   margin: 1mm 0 0;
   word-break: break-all;
@@ -861,12 +912,13 @@ html, body {
 
 /* ============== WHERE WE'RE GOING – 3 columns ============== */
 .next {
-  padding: 12mm 22mm 14mm;
+  margin-top: 8mm;
+  padding: 15mm 22mm 13mm;
   background: var(--navy);
   color: #fff;
   display: flex;
   flex-direction: column;
-  gap: 6mm;
+  gap: 5mm;
 }
 .next .sec-h { color: #fff; }
 .next .sec-strap { color: rgba(255,255,255,.88); }
@@ -881,10 +933,10 @@ html, body {
   background: #fff;
   color: var(--ink);
   border-radius: 3mm;
-  padding: 11mm 9mm 9mm;
+  padding: 10mm 8mm 8mm;
   display: flex;
   flex-direction: column;
-  gap: 4mm;
+  gap: 3mm;
   position: relative;
   box-shadow: 0 1.4mm 3mm rgba(0,0,0,.22);
 }
@@ -998,15 +1050,14 @@ html, body {
 .ftr {
   background: var(--navy-deep);
   color: #fff;
-  padding: 0 22mm;
-  margin-top: auto;
+  padding: 2px 80px 30px 80px;
   flex-shrink: 0;
 }
 .ftr-main {
   display: grid;
   grid-template-columns: 1fr 2fr 0.6fr 0.6fr;
   gap: 10mm;
-  padding: 9mm 0 12mm;
+  padding: 7mm 0 8mm;
   align-items: start;
   border-bottom: 0.3mm solid rgba(255,255,255,.14);
 }
@@ -1016,7 +1067,7 @@ html, body {
   gap: 2.5mm 6mm;
 }
 .ftr-col-sab .ftr-people--sab li {
-  font-size: 18pt;
+  font-size: 19pt;
   color: rgba(255,255,255,.92);
   line-height: 1.2;
 }
@@ -1029,7 +1080,7 @@ html, body {
   display: block;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 16pt;
+  font-size: 18pt;
   letter-spacing: 2pt;
   color: var(--orange);
   text-transform: uppercase;
@@ -1048,13 +1099,13 @@ html, body {
 }
 .ftr-tagline {
   font-family: var(--font-body);
-  font-size: 18pt;
+  font-size: 19pt;
   line-height: 1.2;
   color: rgba(255,255,255,.88);
   margin: 0;
 }
 .ftr-tagline--sub {
-  font-size: 16pt;
+  font-size: 18pt;
   color: rgba(255,255,255,.6);
   font-style: italic;
 }
@@ -1079,7 +1130,7 @@ html, body {
 }
 .ftr-people li {
   font-family: var(--font-body);
-  font-size: 18pt;
+  font-size: 19pt;
   color: rgba(255,255,255,.92);
   line-height: 1.2;
 }
@@ -1091,12 +1142,12 @@ html, body {
   margin-left: 1mm;
 }
 .ftr-people--sab li {
-  font-size: 18pt;
+  font-size: 19pt;
   color: rgba(255,255,255,.82);
 }
 .ftr-sub {
   font-family: var(--font-body);
-  font-size: 16pt;
+  font-size: 18pt;
   line-height: 1.25;
   color: rgba(255,255,255,.7);
   margin: 0;
@@ -1105,7 +1156,7 @@ html, body {
 .ftr-email {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 20pt;
+  font-size: 22pt;
   color: #fff;
   margin: 0 0 2mm;
   word-break: break-all;
@@ -1113,7 +1164,7 @@ html, body {
 }
 .ftr-url {
   font-family: var(--font-body);
-  font-size: 18pt;
+  font-size: 19pt;
   color: rgba(255,255,255,.82);
   margin: 0;
   line-height: 1.3;
@@ -1133,14 +1184,14 @@ html, body {
 .where-event {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 18pt;
+  font-size: 19pt;
   color: #fff;
   margin: 0;
   line-height: 1.1;
 }
 .where-place {
   font-family: var(--font-body);
-  font-size: 16pt;
+  font-size: 18pt;
   color: rgba(255,255,255,.78);
   margin: 0;
 }
@@ -1155,7 +1206,7 @@ html, body {
 }
 .ftr-qr-cap {
   font-family: var(--font-body);
-  font-size: 16pt;
+  font-size: 18pt;
   color: rgba(255,255,255,.7);
   margin: 2mm 0 0;
   line-height: 1.25;
